@@ -1,4 +1,4 @@
-export {
-	host : 'localhost',
-	port : 8081
+export const url = {
+	queryDataBase_url : 'localhost:8081',
+	queryPeopleMsg_url : 'localhost:8082',
 }

@@ -1,5 +1,5 @@
 export const homeData = {
-
+	init : "This is datas from database"
 }
 export const item1Data = {
 

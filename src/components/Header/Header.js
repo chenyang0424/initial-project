@@ -1,7 +1,7 @@
 import React from 'react'
 import { IndexLink, Link } from 'react-router'
 import './Header.scss'
-import img from './volume_up.png'
+import img from './logo.png'
 
 class Header extends React.Component{
 	render() {
@@ -16,22 +16,22 @@ class Header extends React.Component{
 				  </li>
 				  <li role="presentation">
 						<Link to='/Counter1' activeClassName='route-active'>
-				      item
+				      Edit
 				    </Link>
 				  </li>
 				  <li role="presentation">
 						<Link to='/Counter2' activeClassName='route-active'>
-				      item
+				      Doing
 				    </Link>
 				  </li>
 				  <li role="presentation">
 						<Link to='/Counter3' activeClassName='route-active'>
-				      item
+				      Done
 				    </Link>
 				  </li>
 				  <li role="presentation">
 						<Link to='/Counter4' activeClassName='route-active'>
-				      item
+				      Help
 				    </Link>
 				  </li>
 				  <li className="a-logout pull-right"><a href="javascript:;">Sign Out</a></li>

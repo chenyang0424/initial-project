@@ -1,4 +1,4 @@
-import { injectReducer } from '../../store/reducers'
+/*import { injectReducer } from '../../store/reducers'
 
 export default (store) => ({
   getComponent (nextState, cb) {
@@ -8,3 +8,12 @@ export default (store) => ({
       cb(null, Home)
   }
 })
+*/
+import { homeData } from '../../constant/static'
+import HomeView from './components/HomeView'
+
+// Sync route definition
+export default {
+  component : HomeView,
+  homeData
+}
