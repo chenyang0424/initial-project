@@ -20,11 +20,11 @@ const webpackConfig = {
     extensions : ['', '.js', '.jsx', '.json']
   },
   module : {}
-}
+};
 // ------------------------------------
 // Entry Points
 // ------------------------------------
-const APP_ENTRY = project.paths.client('main.js')
+const APP_ENTRY = project.paths.client('main.js');
 
 webpackConfig.entry = {
   app : __DEV__
