@@ -6,13 +6,19 @@
 html, body{
     width: 100%;
 }
-.route-active {
+.route-active{
   font-weight: bold;
-  font-size: 16px;
+}
+.route-active:focus{
+  color: #23527C;
 }
 .nav-pills{
     padding-left: 5em;
     background: #EEE;
+}
+.nav-pills:after{
+    content: '';
+    clear: both;
 }
 div.container{
     width: 100% !important;
@@ -20,4 +26,7 @@ div.container{
 }
 .header-logo{
     height: 100%;
+}
+.a-logout{
+    text-decoration: none;
 }

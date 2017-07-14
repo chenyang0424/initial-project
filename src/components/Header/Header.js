@@ -6,7 +6,7 @@ import img from './volume_up.png'
 class Header extends React.Component{
 	render() {
 		return (
-		  <div style={{width:"100%",height:"2em"}}>
+		  <div style={{width:"100%",height:"2em",position:"relative"}}>
 		  	<img src={img} className='pull-left header-logo'/>
 		    <ul className="nav nav-pills">
 				  <li role="presentation">
@@ -34,6 +34,8 @@ class Header extends React.Component{
 				      item
 				    </Link>
 				  </li>
+				  <li className="a-logout pull-right"><a href="javascript:;">Sign Out</a></li>
+				  <li className="a-logout pull-right"><a href="javascript:;">Settings</a></li>
 				</ul>
 		  </div>
 		)
