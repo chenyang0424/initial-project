@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './HomeView.scss'
 import { Fetch } from '../../fetch'
-import { url } from '../../../constant/const'
 
 class HomeView extends Component {
 	constructor(props){
@@ -15,10 +14,9 @@ class HomeView extends Component {
 		this.setState({ homeData });
 	}
 	componentDidMount(){
-		let { queryDataBase_url } = url,
-			setState = this.setState,
+		let setState = this.setState,
 			{ queryDataBase, PromiseQueue } = Fetch;
-		//queryDataBase({ url : queryDataBase_url }, (homeData) => { setState({ homeData }) });
+		//queryDataBase().then((homeData) => { setState({ homeData }) });
 	}
 	render() {
 		let { homeData : { init } } = this.state;
