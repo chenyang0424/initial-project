@@ -2,10 +2,10 @@
 import CoreLayout from '../layouts/CoreLayout'
 import Login from '../layouts/Login'
 import HomeRoute from './Home'
-import CounterRoute1 from './Counter1'
-import CounterRoute2 from './Counter2'
-import CounterRoute3 from './Counter3'
-import CounterRoute4 from './Counter4'
+import CounterRoute1 from './Edit'
+import CounterRoute2 from './Doing'
+import CounterRoute3 from './Done'
+import CounterRoute4 from './Help'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */

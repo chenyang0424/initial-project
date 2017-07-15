@@ -16,8 +16,8 @@ class HomeView extends Component {
 	}
 	componentDidMount(){
 		let { queryDataBase_url } = url,
-				setState = this.setState,
-				{ queryDataBase, PromiseQueue } = Fetch;
+			setState = this.setState,
+			{ queryDataBase, PromiseQueue } = Fetch;
 		//queryDataBase({ url : queryDataBase_url }, (homeData) => { setState({ homeData }) });
 	}
 	render() {

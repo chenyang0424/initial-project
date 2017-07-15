@@ -15,7 +15,7 @@ export function request({ url, method = 'POST', body = null, credentials = 'omit
 
 export const Fetch = {
 	queryDataBase(object = {}, callback){
-		return 'url' in object ?  request(object, callback) : console.error("url doesn't exist , query failed.");
+		return 'url' in object ?  request(object, callback) : console.error("The url doesn't exist , queryDataBase failed.");
 	},
 	PromiseQueue(func, ...params) {
 		return new Promise((resolve, reject) => {

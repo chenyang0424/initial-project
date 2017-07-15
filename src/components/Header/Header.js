@@ -15,22 +15,22 @@ class Header extends React.Component{
 				    </IndexLink>
 				  </li>
 				  <li role="presentation">
-						<Link to='/Counter1' activeClassName='route-active'>
+						<Link to='/Edit' activeClassName='route-active'>
 				      Edit
 				    </Link>
 				  </li>
 				  <li role="presentation">
-						<Link to='/Counter2' activeClassName='route-active'>
+						<Link to='/Doing' activeClassName='route-active'>
 				      Doing
 				    </Link>
 				  </li>
 				  <li role="presentation">
-						<Link to='/Counter3' activeClassName='route-active'>
+						<Link to='/Done' activeClassName='route-active'>
 				      Done
 				    </Link>
 				  </li>
 				  <li role="presentation">
-						<Link to='/Counter4' activeClassName='route-active'>
+						<Link to='/Help' activeClassName='route-active'>
 				      Help
 				    </Link>
 				  </li>
