@@ -2,10 +2,12 @@
 import CoreLayout from '../layouts/CoreLayout'
 import Login from '../layouts/Login'
 import HomeRoute from './Home'
-import CounterRoute1 from './Edit'
-import CounterRoute2 from './Doing'
-import CounterRoute3 from './Done'
-import CounterRoute4 from './Help'
+import CounterRoute1 from './Data'
+import CounterRoute2 from './UrgeDebt'
+import CounterRoute3 from './Manage'
+import CounterRoute4 from './Statistical'
+import CounterRoute5 from './Financial'
+import CounterRoute6 from './System'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -19,7 +21,9 @@ export const createRoutes = (store) => ([
     CounterRoute1(store),
     CounterRoute2(store),
     CounterRoute3(store),
-    CounterRoute4(store)
+    CounterRoute4(store),
+    CounterRoute5(store),
+    CounterRoute6(store)
   ]
 },{
 	path        : '/login',

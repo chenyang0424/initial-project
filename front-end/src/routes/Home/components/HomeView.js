@@ -16,14 +16,24 @@ class HomeView extends Component {
 	componentDidMount(){
 		let setState = this.setState,
 			{ queryDataBase, PromiseQueue } = Fetch;
-		//queryDataBase().then((homeData) => { setState({ homeData }) });
+		queryDataBase().then((homeData) => { setState({ homeData }) });
+		
+		
+		/*fetch('http://localhost:8081/getData', {
+			mode: 'no-cores'
+		})//.then(res => res.json())
+		.then(res => {
+			//if(res.success === true)
+				console.log(res, res.body);
+		});*/
+		
+		
 	}
 	render() {
 		let { homeData : { init } } = this.state;
 		return (
-		  <div>
-		    <h4>Welcome!</h4>
-		    <h4>{ init }!</h4>
+		  <div style={{width:"50%",margin:"0 auto",height:"500px"}}>
+		    <h4>欢迎登陆XX催收系统!</h4>
 		  </div>)
 	}
 }
