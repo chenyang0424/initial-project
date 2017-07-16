@@ -1,8 +1,9 @@
 .DS_STORE
 *.log
 
-node_modules
-
+front-end/node_modules
+rear-end/bundle.js
+rear-end/node_modules
 dist
 coverage
 
