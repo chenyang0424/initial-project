@@ -1,5 +1,5 @@
 import React from 'react'
-/*
+
 import DelegateInstitution from './mainWindow/DelegateInstitution'
 import DelegateProtocol from './mainWindow/DelegateProtocol'
 import DelegateBusiness from './mainWindow/DelegateBusiness'
@@ -13,34 +13,37 @@ let mainWindow = (title, dataContent) => {
 	var component;
 	switch(title){
 		case 'institution':
-		component = < dataContent={ dataContent }/>;
+		component = <DelegateInstitution dataContent={ dataContent }/>;
 		break;
 		case 'protocol':
-		component = < dataContent={ dataContent }/>;
+		component = <DelegateProtocol dataContent={ dataContent }/>;
 		break;
 		case 'business':
-		component = < dataContent={ dataContent }/>;
+		component = <DelegateBusiness dataContent={ dataContent }/>;
 		break;
 		case 'caseImport':
-		component = < dataContent={ dataContent }/>;
+		component = <CaseImport dataContent={ dataContent }/>;
 		break;
 		case 'dataEnsure':
-		component = < dataContent={ dataContent }/>;
+		component = <DataEnsure dataContent={ dataContent }/>;
 		break;
 		case 'dataUpdate':
-		component = < dataContent={ dataContent }/>;
+		component = <DataUpdate dataContent={ dataContent }/>;
 		break;
 		case 'loanRecord':
-		component = < dataContent={ dataContent }/>;
+		component = <LoanRecord dataContent={ dataContent }/>;
+		break;
+		case 'printManage':
+		component = <PrintManage dataContent={ dataContent }/>;
 		break;
 	}
 	return component;
-}*/
+}
 class DataMainWindow extends React.Component {
 	render(){
-		let { dataContent } = this.props;
+		let { dataContent, text } = this.props;
 		return (<div>
-				{ dataContent }
+				{ mainWindow(text, dataContent) }
 			</div>)
 	}
 }

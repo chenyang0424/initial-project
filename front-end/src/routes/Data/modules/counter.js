@@ -64,6 +64,10 @@ const initialState = {
 			text: 'loanRecord',
 			show: false,
 			dataContent: 'loanRecord'
+		},{
+			text: 'printManage',
+			show: false,
+			dataContent: 'printManage'
 		}
 	],
 

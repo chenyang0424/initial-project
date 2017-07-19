@@ -1,19 +1,17 @@
 import { url as locations } from '../constant/const'
 export function request({ url, method = 'POST', body = 'shuai', credentials = 'include' } = {}){
-	body = JSON.stringify(body);
 	return new Promise((resolve, reject) => {
 		fetch(url, {
 			method,
-			headers: { 
+			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
 				'Cache-Control': 'no-cache',
-				//'Content-Type': 'application/json'
 			},
 			cache: 'default',
 			mode: 'no-cors',
 			credentials,
-			//body: 'value=' + body
+			body,
 		})
 		.then(res => {
 			console.log(res);
@@ -26,19 +24,18 @@ export function request({ url, method = 'POST', body = 'shuai', credentials = 'i
 }
 
 export const Fetch = {
+	login({ userName, passWord } = {}){
+		let { login_url : url } = locations;
+		let body = 'user=' + userName + '&password=' + passWord;
+		return request({ url, body });
+	},
 	queryDataBase(){
 		let { queryDataBase_url : url } = locations;
 		return request({ url, method : 'GET' });
 	},
-	PromiseQueue(func, ...params) {
-		return new Promise((resolve, reject) => {
-			func(...params, (e) => {
-				resolve(e);
-			});
-		});
-	},
 	addClientMsg(body){
 		let { addClientMsg_url : url } = locations;
+		body = 'client=' + JSON.stringify(body);
 		return request({ url, body });
 	}
 }

@@ -3,9 +3,9 @@ import MenuLists from './MenuLists'
 import './data.scss'
 import DataMainWindow from './DataMainWindow'
 let valueFromKey = (dataMenuList) => {
-	for(let { show, dataContent } of dataMenuList){
+	for(let { show, dataContent, text } of dataMenuList){
 		if(show == true)
-			return dataContent;
+			return { dataContent, text };
 	}
 	throw new error ("No component should be showed.");
 }
@@ -26,7 +26,7 @@ class CounterView extends Component {
 					[showDataUpdate, DataUpdate],
 					[showLoanRecord, LoanRecord],
 					[showPrintManage, PrintManage]];*/
-		let dataContent = valueFromKey(dataMenuList);
+		let { dataContent, text } = valueFromKey(dataMenuList);
 
 		return(
 		  <div className="row">
@@ -37,7 +37,7 @@ class CounterView extends Component {
 		  	</div>
 		  	<div className="col-md-10" >
 					<div className="menu-frame">
-		    	<DataMainWindow dataContent={ dataContent } />
+		    	<DataMainWindow dataContent={ dataContent } text={ text }/>
 		    	</div>
 		  	</div>
 		  </div>)

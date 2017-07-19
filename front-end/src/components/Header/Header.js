@@ -1,9 +1,15 @@
 import React from 'react'
 import { IndexLink, Link } from 'react-router'
 import './Header.scss'
-import img from './logo.png'
+import img from './logo.jpg'
 
 class Header extends React.Component{
+	logout(){
+		if (confirm("确定退出系统吗？")){
+			localStorage.clear();
+			window.location = '/login';
+		}
+	}
 	render() {
 		return (
 		  <div style={{width:"100%",height:"2em",position:"relative"}}>
@@ -44,7 +50,7 @@ class Header extends React.Component{
 				      系统
 				    </Link>
 				  </li>
-				  <li className="a-logout pull-right"><a href="javascript:;">退出系统</a></li>
+				  <li className="a-logout pull-right" onClick={this.logout.bind(this)}><a href="javascript:;">退出系统</a></li>
 				  <li className="a-logout pull-right"><a href="javascript:;">设置</a></li>
 				</ul>
 		  </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Input } from 'antd'
 import 'antd/dist/antd.css'
-import 'less'
+//import 'less'
 //import './edit.less'
 import { Fetch } from '../../fetch'
 class AddClient extends Component {

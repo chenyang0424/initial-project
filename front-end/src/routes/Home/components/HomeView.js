@@ -17,8 +17,8 @@ class HomeView extends Component {
 		let setState = this.setState,
 			{ queryDataBase, PromiseQueue } = Fetch;
 		queryDataBase().then((homeData) => { setState({ homeData }) });
-		
-		
+
+
 		/*fetch('http://localhost:8081/getData', {
 			mode: 'no-cores'
 		})//.then(res => res.json())
@@ -26,14 +26,30 @@ class HomeView extends Component {
 			//if(res.success === true)
 				console.log(res, res.body);
 		});*/
-		
-		
+
+
 	}
 	render() {
 		let { homeData : { init } } = this.state;
 		return (
-		  <div style={{width:"50%",margin:"0 auto",height:"500px"}}>
-		    <h4>欢迎登陆XX催收系统!</h4>
+		  <div style={{width:"35%",margin:"100px auto",height:"500px"}}>
+		    <h4 style={{margin:"2em 0"}}>欢迎登陆XX催收系统!</h4>
+		    <table className="table table-bordered">
+		    	<tbody>
+					  <tr>
+					  	<td width="20%">用户姓名:</td>
+					  	<td></td>
+					  </tr>
+					  <tr>
+					  	<td>用户类型:</td>
+					  	<td></td>
+					  </tr>
+					  <tr>
+					  	<td>用户ID:</td>
+					  	<td></td>
+					  </tr>
+		    	</tbody>
+				</table>
 		  </div>)
 	}
 }
