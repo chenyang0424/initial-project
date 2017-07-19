@@ -39,7 +39,44 @@ const initialState = {
 		{
 			text: 'institution',
 			show: true,
-			dataContent: 'institution'
+			dataContent: {
+				showDefault: true,
+				showAtom: false,
+				showMain: false,
+				defaultData: [{
+					id: '984398jijfwbi',
+					institution: '资产雷达',
+					atomNumber: 2,
+					abbreviation: '雷达',
+					type: '贷款公司',
+					manager: 'shuai',
+					phone: '15274652882'
+				},{
+					id: '3gr34h4654h5',
+					institution: '资产雷达',
+					atomNumber: 3,
+					abbreviation: '雷达',
+					type: '贷款公司',
+					manager: 'gfee',
+					phone: '15274652882'
+				}],
+				atomData: {
+					institution: 'piangan',
+					abbreviation: 'PA',
+					parentInstitution: '资产雷达',
+					manager: 'shuai',
+					phone: '15274652882',
+					recordDate: '2017/07/17'
+				},
+				mainData: {
+					institution: '资产雷达',
+					abbreviation: '雷达',
+					type: '贷款公司',
+					manager: 'shuai',
+					phone: '15274652882',
+					recordDate: '2017/07/17'
+				}
+			}
 		},{
 			text: 'protocol',
 			show: false,
