@@ -7,15 +7,16 @@ class MenuLists extends Component {
 		this.props.switchMenuLists(text);
 	}
 	render(){
-		let { MenuLists } = this.props;
-		let menus = MenuLists.map((each, i) => 
-			<li className="list-group" key={i} onClick={this.onSwitchMenuLists.bind(this, each)}>{ each.text }</li>
-		);
+		let { menuList } = this.props;
+		var classFocus;
+		let menus = menuList.map((each, i) =>{
+			classFocus = each.show ? "list-group-item selected-menu" : "list-group-item";
+			return <a href="javascript:;" className={classFocus} key={i} onClick={this.onSwitchMenuLists.bind(this, each.text)}>{ each.text }</a>
+		});
 		return (
-			<ul className="group">
+			<div className="list-group">
 				{ menus }
-			</ul>
-		)
+			</div>)
 	}
 }
 

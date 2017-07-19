@@ -13,11 +13,11 @@ class CounterView extends Component {
 			<div style={{ margin: '0 auto' }} >
 		    <h2>Counter: { counter }</h2>
 		    <button className='btn btn-default' onClick={ increment }>
-		      Increment
+		      财务
 		    </button>
 		    {' '}
 		    <button className='btn btn-default' onClick={ doubleAsync }>
-		      Double (Async)
+		      财务 (Async)
 		    </button>
 		  </div>)
 	}

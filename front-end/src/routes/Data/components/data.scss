@@ -1,3 +1,18 @@
-.data-frame>div{
+.menu-frame{
+    width: 100%;
+    min-height: 500px;
     border: 1px #C0C0C0 solid;
+}
+.row>div{
+   padding: 0.5em;
+}
+.list-menu>li{
+    margin: 0;
+    cursor: pointer;
+    background: #EEE;
+    padding: 5px 0;
+}
+.selected-menu,.list-group-item:hover{
+    background: #337AB7 !important;
+    color: #FFF !important;
 }

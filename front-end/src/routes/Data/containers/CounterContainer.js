@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { increment, doubleAsync } from '../modules/counter'
+import { switchMenuLists } from '../modules/counter'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -13,12 +13,11 @@ import CounterView from '../components/CounterView'
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  increment : () => increment(1),
-  doubleAsync
+  switchMenuLists : (text) => switchMenuLists(text),
 }
 
 const mapStateToProps = (state) => ({
-  counter : state.counter
+	dataMenuList: state.Data.dataMenuList,
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
