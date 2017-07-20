@@ -3,11 +3,11 @@
 /**
  * Module dependencies.
  */
-
 var app = require('../app');
-var debug = require('debug')('rear-end:server');
-var http = require('http');
 
+var debug = require('debug')('rear-end:server');
+var http = require("http");
+var { socketserver } = require('../routes/websocket');
 /**
  * Get port from environment and store in Express.
  */
@@ -20,12 +20,16 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, () => {
+	console.log('www is on 3000 port.');
+});
+socketserver.listen(3001, () => {
+	console.log('webSocket is on 3001 port.');
+})
 server.on('error', onError);
 server.on('listening', onListening);
 

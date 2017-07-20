@@ -37,5 +37,10 @@ export const Fetch = {
 		let { addClientMsg_url : url } = locations;
 		body = 'client=' + JSON.stringify(body);
 		return request({ url, body });
+	},
+	getOneMainInstitution(id){
+		let { institution_url : url } = locations;
+		let body = 'institutionId=' + id;
+		return request({ url, body });
 	}
 }
