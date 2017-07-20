@@ -50,7 +50,7 @@ const initialState = {
 					abbreviation: '雷达',
 					type: '贷款公司',
 					manager: 'shuai',
-					phone: '15274652882'
+					phone: '110'
 				},{
 					id: '3gr34h4654h5',
 					institution: '资产雷达',
