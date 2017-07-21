@@ -1,7 +1,7 @@
 export const url = {
-	queryDataBase_url : 'http://localhost:8081/getData',
-	queryPeopleMsg_url : 'http://localhost:8082/queryPeopleMsg',
-	addClientMsg_url : 'http://localhost:8081/addClientMsg',
-	login_url : 'http://localhost:8081/login',
-	institution_url : 'http://localhost:8081/getOneMainInstitution',
+	queryDataBase_url : 'http://localhost:8080/getData',
+	queryPeopleMsg_url : 'http://localhost:8080/queryPeopleMsg',
+	addClientMsg_url : 'http://localhost:8080/addClientMsg',
+	login_url : 'http://localhost:8080/login',
+	institution_url : 'http://localhost:8080/getOneMainInstitution',
 }

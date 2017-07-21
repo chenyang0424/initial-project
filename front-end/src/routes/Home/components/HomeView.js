@@ -33,7 +33,7 @@ class HomeView extends Component {
 		let { homeData : { init } } = this.state;
 		return (
 		  <div style={{width:"35%",margin:"100px auto",height:"500px"}}>
-		    <h4 style={{margin:"2em 0"}}>欢迎登陆XX催收系统!</h4>
+		    <h4 style={{margin:"2em 0"}}>欢迎登陆XXXX系统!</h4>
 		    <table className="table table-bordered">
 		    	<tbody>
 					  <tr>
