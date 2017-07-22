@@ -1,41 +1,36 @@
 import { url as locations } from '../constant/const'
-export function request({ url, method = 'POST', body = 'user=1', credentials = 'include' } = {}){
-//	return new Promise((resolve, reject) => {
-//		fetch(url, {
-//			method,
-//			headers: {
-//				'Content-Type': 'application/x-www-form-urlencoded',
-//				'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-//				'Cache-Control': 'no-cache'
-//			},
-//			mode: 'no-cors',
-//			//body,
-//		})
-//		.then(res => {
-//			console.log(res);
-//			if(res.ok === true)
-//				resolve(res.data);
-//			else
-//				console.log("request failed !");
-//		}).catch(err => console.log('request ' + url + 'failed: ', err));
-//	});
-	return new Promise((resolve, reject) => {
-		fetch(url,{
-		    method,//or 'GET'
-		    //credentials: "same-origin",//or "include","same-origin":只在请求同域中资源时成功，其他请求将被拒绝。
-		　　headers:{
-		　　　　"Content-type":"application:/x-www-form-urlencoded:charset=UTF-8"
-		　　},mode: 'no-cors',
-//		　　body:"name=lulingniu&age=40"
-		})
-		.then((data) => {
-		    console.log("请求成功，JSON解析后的响应数据为:",data);resolve(data);
-		})
-		.catch(function(err){
-		    console.log("Fetch错误:"+err);
-		});
-	});
 
+function createAjax(){
+	var xmlHttp = null;
+    try{// Firefox, Opera 8.0+, Safari
+    	xmlHttp = new XMLHttpRequest();
+    }catch (e){
+	    try{// Internet Explorer
+	        xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+	    }catch (e){
+	        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+	    }
+    }
+    return xmlHttp;
+}
+function ajax({ url, method, body, resolve }){
+	let xmlhttp = createAjax();
+	xmlhttp.onreadystatechange = () => {
+	    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+	    	let data = 'JSON' in window ? JSON.parse(xmlhttp.responseText) : eval(xmlhttp.responseText);
+	    	resolve(data);
+	    }
+  	}
+	if (method.toLowerCase() === 'get')
+		url += '?' + body;
+	xmlhttp.open(method, url, true);
+	if (method.toLowerCase() === 'post')
+		xmlhttp.send(body);
+	else
+		xmlhttp.send();
+}
+function request({ url, method = 'POST', body = 'user=1', credentials = 'include' } = {}){
+	return new Promise((resolve, reject) => ajax({ url, method, body, resolve }));
 }
 
 export const Fetch = {

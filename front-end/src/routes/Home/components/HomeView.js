@@ -14,20 +14,8 @@ class HomeView extends Component {
 		this.setState({ homeData });
 	}
 	componentDidMount(){
-		let setState = this.setState,
-			{ queryDataBase, PromiseQueue } = Fetch;
-		queryDataBase().then((homeData) => { setState({ homeData }) });
-
-
-		/*fetch('http://localhost:8081/getData', {
-			mode: 'no-cores'
-		})//.then(res => res.json())
-		.then(res => {
-			//if(res.success === true)
-				console.log(res, res.body);
-		});*/
-
-
+		let setState = this.setState, { queryDataBase, PromiseQueue } = Fetch;
+		queryDataBase().then((homeData) => { console.log( homeData ) });
 	}
 	render() {
 		let { homeData : { init } } = this.state;
