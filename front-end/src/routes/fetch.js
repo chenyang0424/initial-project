@@ -1,5 +1,4 @@
 import { url as locations } from '../constant/const'
-
 function createAjax(){
 	var xmlHttp = null;
     try{// Firefox, Opera 8.0+, Safari
@@ -13,14 +12,14 @@ function createAjax(){
     }
     return xmlHttp;
 }
-function ajax({ url, method, body, resolve }){
+function ajax({ url, method, body, resolve } = {}){
 	let xmlhttp = createAjax();
 	xmlhttp.onreadystatechange = () => {
-	    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-	    	let data = 'JSON' in window ? JSON.parse(xmlhttp.responseText) : eval(xmlhttp.responseText);
-	    	resolve(data);
-	    }
-  	}
+    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+    	let data = 'JSON' in window ? JSON.parse(xmlhttp.responseText) : eval(xmlhttp.responseText);
+    	resolve(data);
+    }
+	}
 	if (method.toLowerCase() === 'get')
 		url += body === '' ? '' : ('?' + body);
 	xmlhttp.open(method, url, true);
@@ -29,8 +28,36 @@ function ajax({ url, method, body, resolve }){
 	else
 		xmlhttp.send();
 }
-function request({ url, method = 'POST', body = '', credentials = 'include' } = {}){
-	return new Promise((resolve, reject) => ajax({ url, method, body, resolve }));
+function ajaxCORS({ method, url, body = null, resolve } = {}){
+  var xhr = createAjax();
+  if('withCredentials' in xhr){
+    xhr.open(method, url, true);
+  }else if(typeof XDomainRequest != 'undefined'){
+    var xhr = new XDomainRequest();
+    xhr.open(method, url);
+  }else{
+    xhr = null;
+  }
+  if (xhr){
+  	xhr.onreadystatechange = () => {
+  		if(xhr.readyState == 4 && xhr.status == 200){
+	    	let data = 'JSON' in window ? JSON.parse(xhr.responseText) : eval(xhr.responseText);
+	    	resolve(data);
+	    }
+  	}
+  	xhr.send(body);
+  }
+}
+function request({ url, method = 'POST', body = '' } = {}){
+	return new Promise((resolve, reject) => {
+		fetch(url, {
+			method, body,
+	    mode: 'cors',
+	    headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }
+		}).then(res => res.json())
+		.then(data => resolve(data))
+		.catch(err => reject(err));
+	});
 }
 
 export const Fetch = {

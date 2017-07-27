@@ -4,6 +4,7 @@ class CounterView extends Component {
 	componentDidMount(){
 
 	}
+
 	render(){
 		//action
 		let { increment, counter } = this.props;
