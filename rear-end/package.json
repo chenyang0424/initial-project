@@ -21,7 +21,7 @@
     "babel-register": "^6.24.1",
     "cors": "^2.8.4",
     "webpack": "^3.3.0"
-  },
+,	"grunt": "^1.0.1",	"mongoose": "^4.11.4"  },
   "author": "shuai.huang",
   "license": "ISC",
   "description": "for initial-project",

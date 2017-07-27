@@ -22,14 +22,14 @@ function ajax({ url, method, body, resolve }){
 	    }
   	}
 	if (method.toLowerCase() === 'get')
-		url += '?' + body;
+		url += body === '' ? '' : ('?' + body);
 	xmlhttp.open(method, url, true);
 	if (method.toLowerCase() === 'post')
 		xmlhttp.send(body);
 	else
 		xmlhttp.send();
 }
-function request({ url, method = 'POST', body = 'user=1', credentials = 'include' } = {}){
+function request({ url, method = 'POST', body = '', credentials = 'include' } = {}){
 	return new Promise((resolve, reject) => ajax({ url, method, body, resolve }));
 }
 
@@ -54,6 +54,7 @@ export const Fetch = {
 		return request({ url, body });
 	}
 }
+
 export const Util = {
 	asyncResult: async function (finish, ...fetch){
 		var results = [];
